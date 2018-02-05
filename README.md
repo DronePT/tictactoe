@@ -1,4 +1,4 @@
-Demo: https://andrelabs.com/tictactoe
+Demo: https://tictactoe.andrelabs.com
 
 ## Requirements:
 
