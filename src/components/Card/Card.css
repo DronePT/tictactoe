@@ -1,0 +1,48 @@
+.Card {
+    position: relative;
+    padding: 48px 0 0;
+    overflow-x: hidden;
+}
+
+.Card.has-footer {
+    padding: 48px 0 56px;
+}
+
+.Card-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px rgba(0, 0, 0, .16);
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, .08);
+    box-shadow: 0 2px 16px -4px rgba(0, 0, 0, .32);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.Card-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    border-top: solid 1px rgba(0, 0, 0, .16);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Card-footer>* {
+    margin-right: 8px;
+}
+
+.Card-body {
+    padding: 16px;
+}

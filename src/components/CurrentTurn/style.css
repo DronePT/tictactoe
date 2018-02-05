@@ -1,0 +1,28 @@
+.CurrentTurn {
+    width: 200px;
+    box-shadow: 0 0 16px -8px rgba(0, 0, 0, 0.32), 0 4px 16px -8px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    border: solid 1px #f0f1f2;
+    background-color: #fff;
+}
+
+.CurrentTurn-header {
+    font-weight: 700;
+    font-size: 1rem;
+    border-bottom: solid 1px #eee;
+    padding: 8px 16px;
+}
+
+.CurrentTurn-body {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CurrentTurn-footer {
+    font-weight: 400;
+    font-size: 0.85rem;
+    border-top: solid 1px #eee;
+    padding: 8px 16px;
+}

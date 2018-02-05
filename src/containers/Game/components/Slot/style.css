@@ -1,0 +1,69 @@
+.Slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border: solid 1px #3F51B5;
+    flex: 0 1 120px;
+    font-size: 1rem;
+    outline: none;
+    transition: background-color .25s ease;
+    will-change: background-color;
+}
+
+.Slot:focus {
+    background-color: rgba(63, 81, 181, .14);
+}
+
+.Slot.is-cross:focus {
+    background-color: rgba(0, 0, 0, .14);
+}
+
+.Slot>i {
+    color: #3F51B5;
+}
+
+.Slot:focus>i {
+    color: rgba(63, 81, 181, .54);
+}
+
+.Slot.is-cross:focus>i {
+    color: rgba(0, 0, 0, .54);
+}
+
+.Slot.is-cross>i {
+    color: rgba(0, 0, 0, .87);
+}
+
+.Slot.pos-0 {
+    border-width: 0 1px 1px 0;
+}
+
+.Slot.pos-1 {
+    border-width: 0 1px 1px 1px;
+}
+
+.Slot.pos-2 {
+    border-width: 0 0 1px 1px;
+}
+
+.Slot.pos-3 {
+    border-width: 1px 1px 1px 0;
+}
+
+.Slot.pos-5 {
+    border-width: 1px 0 1px 1px;
+}
+
+.Slot.pos-6 {
+    border-width: 1px 1px 0 0;
+}
+
+.Slot.pos-7 {
+    border-width: 1px 1px 0 1px;
+}
+
+.Slot.pos-8 {
+    border-width: 1px 0 0 1px;
+}

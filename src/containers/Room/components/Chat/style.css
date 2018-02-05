@@ -1,0 +1,32 @@
+.RoomChat {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.16);
+}
+
+.RoomChat-log {
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.RoomChat-messages {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    flex: 1;
+    min-height: 100%;
+}
+
+.RoomChat-messages>*:last-child {
+    padding-bottom: 8px;
+}
+
+.RoomChat-input {
+    flex: 0;
+}
+
+.RoomChat-input>input {
+    width: 100%;
+    border: none;
+    outline: 0;
+    padding: 8px;
+    font-size: .75rem;
+}

@@ -1,0 +1,7 @@
+.app-logo {
+    padding: 16px;
+}
+
+.app-logo > img {
+    width: 150px;
+}

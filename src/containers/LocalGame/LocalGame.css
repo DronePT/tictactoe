@@ -1,0 +1,35 @@
+.LocalGame {
+    position: relative;
+    width: 100%;
+}
+
+.LocalGame-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 32px;
+}
+
+.LocalGame-stats {
+    display: flex;
+    flex-flow: column;
+}
+
+.LocalGame-stats>* {
+    margin-bottom: 16px;
+}
+
+.LocalGame-stats :last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width:768px) {
+    .LocalGame-body {
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .LocalGame-stats {
+        margin-top: 32px;
+    }
+}

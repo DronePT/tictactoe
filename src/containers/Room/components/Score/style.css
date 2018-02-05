@@ -1,0 +1,38 @@
+.RoomScore {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .04);
+    border-bottom: solid 1px rgba(0, 0, 0, .16);
+    padding: 16px;
+    font-size: 1.2rem;
+}
+
+.RoomScore>.versus {
+    font-size: 2rem;
+}
+
+.RoomScore>.player {
+    display: flex;
+}
+
+.RoomScore>.player>span {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.RoomScore>.player>.score {
+    width: 56px;
+    height: 56px;
+    background-color: #fff;
+    color: #3F51B5;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: solid 1px #3F51B5;
+    border-radius: 5px;
+}

@@ -1,0 +1,53 @@
+.WinnerPopup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .72);
+    border-radius: 5px;
+}
+
+.dismiss-button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.dismiss-button>span {
+    margin-left: 4px;
+    color: rgba(0, 0, 0, .72);
+}
+
+.WinnerPopup>.trophy>i {
+    color: #fc0;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, .32);
+}
+
+.WinnerPopup>.trophy>i.is-green {
+    color: green;
+}
+
+.WinnerPopup>.message {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 16px;
+}
+
+@media only screen and (max-width:768px) {
+    .WinnerPopup {
+        justify-content: flex-start;
+        padding-top: 150px;
+    }
+}

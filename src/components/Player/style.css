@@ -1,0 +1,7 @@
+i.Player.is-cross {
+    color: rgba(0, 0, 0, .87);
+}
+
+i.Player.is-circle {
+    color: #3F51B5;
+}

@@ -1,0 +1,11 @@
+.ChatMessage {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+}
+
+.ChatMessage.is-action {
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .54);
+}
