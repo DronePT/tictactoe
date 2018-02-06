@@ -57,12 +57,6 @@ export const disconnect = () => server.socket.disconnect('user_disconnect')
 export const updateStateKey = dispatch => (key, value) =>
   dispatch({ type: types.UPDATE_STATE_KEY, payload: { key, value } })
 
-export const joinRoom = dispatch => (name) => {
-  server.socket.emit('join-room', name)
-
-  dispatch({ type: types.JOIN_ROOM, payload: name })
-}
-
 // send chat message to server
 export const sendMessage = message => server.socket.emit('message', message)
 

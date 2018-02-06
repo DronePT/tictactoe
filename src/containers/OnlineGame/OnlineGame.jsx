@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import shortid from 'shortid'
 
 // required redux actions
-import { connect as connectServer, joinRoom } from './../../store/actions/onlineGame.actions'
+import { connect as connectServer } from './../../store/actions/onlineGame.actions'
 
 // required containers
 import { CreateConnection, Room } from './../../containers'
@@ -45,7 +45,6 @@ class OnlineGame extends Component {
 const mapStateToProps = ({ onlineGame }) => ({ onlineGame })
 const dispatchActionsToProps = dispatcher => ({
   connect: connectServer(dispatcher),
-  join: joinRoom(dispatcher),
 })
 
 export default connect(mapStateToProps, dispatchActionsToProps)(OnlineGame)
