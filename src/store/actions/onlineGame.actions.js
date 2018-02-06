@@ -34,6 +34,7 @@ export const connect = dispatch => async (name, room, _token = null) => {
   server.socket.on('message', payload => dispatchChat(payload))
 
   server.socket.on('update-game', payload => dispatch({ type: types.UPDATE_ONLINE_BOARD, payload }))
+  server.socket.on('game-end', () => dispatch({ type: types.UPDATE_GAME_END }))
 }
 
 export const disconnect = () => server.socket.disconnect('user_disconnect')

@@ -79,9 +79,13 @@ const createMessageBroadcaster = (io, user) => (text) => {
   io.to(room).emit('message', message)
 }
 
-const updateGameAndEmit = ({ io, game, user }, update) => {
+const updateGameAndEmit = ({ io, game, user }, update, gameEnded = false) => {
   const { players } = game
   io.to(user.room).emit('update-game', { ...update, players })
+
+  if (gameEnded) {
+    io.to(user.room).emit('game-end')
+  }
 
   return game.update(update)
 }
@@ -113,6 +117,7 @@ const createGameUpdater = (io, user) => async (position) => {
         turn: me.index === 2 ? 1 : 2,
         winHistory: [{ ...me, combination: winCombination }, ...winHistory],
       },
+      true,
     )
   }
 
@@ -125,6 +130,7 @@ const createGameUpdater = (io, user) => async (position) => {
         turn: me.index === 2 ? 1 : 2,
         winHistory: [{ index: 0, combination: [] }, ...winHistory],
       },
+      true,
     )
   }
 
@@ -134,6 +140,7 @@ const createGameUpdater = (io, user) => async (position) => {
       board: newBoard,
       turn: me.index === 2 ? 1 : 2,
     },
+    false,
   )
 }
 

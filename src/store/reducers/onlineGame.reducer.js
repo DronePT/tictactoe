@@ -31,9 +31,11 @@ export default (state = defaultState, { type, payload }) => {
     case types.UPDATE_CHAT:
       return { ...state, chat: [...state.chat, payload] }
     case types.UPDATE_ONLINE_BOARD:
-      return { ...state, ...payload, showWinner: !!payload.winHistory && state.turn }
+      return { ...state, ...payload }
     case types.DIMISS_ONLINE_WINNER_POPUP:
       return { ...state, showWinner: false }
+    case types.UPDATE_GAME_END:
+      return { ...state, showWinner: true }
     default:
       return state
   }
