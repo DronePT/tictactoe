@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const logger = require('./../helpers/logger')
 
 const { Schema } = mongoose
 
@@ -15,11 +14,20 @@ const gameSchema = new Schema({
   winHistory: [],
 })
 
+/**
+ * assign player index for frontend player distinction (between X's and O's)
+ * @param {*} player player object
+ * @param {*} players array of players in game
+ */
 const assignIndex = (player, players) => {
   const index = !players.find(p => p.index === 1) ? 1 : 2
   return { ...player, index }
 }
 
+/**
+ * remove a player from database by his socket.io cient id
+ * @param {*} socketId socket.io client id
+ */
 gameSchema.methods.removePlayerBySocketId = async function f(socketId) {
   const updated = this.players.filter(({ socket }) => socket !== socketId)
 
@@ -30,8 +38,11 @@ gameSchema.methods.removePlayerBySocketId = async function f(socketId) {
   return updated
 }
 
+/**
+ * add a player to game database:
+ * @param {*} player player data object
+ */
 gameSchema.methods.addPlayer = async function f(player) {
-  logger('Adding player\n', player)
   const playersInGame = this.players.length
 
   // find player in players array
@@ -53,12 +64,18 @@ gameSchema.methods.addPlayer = async function f(player) {
   return updatedPlayer
 }
 
+/**
+ * find a game on database or create it if not found
+ * @param {*} name room name for the game
+ */
 gameSchema.statics.findOrCreateByName = async function f(name) {
   const Game = this
 
   const res = await Game.findOne({ name })
   if (res) return res
 
+  // if game not found create new one and assign random
+  // player index nuber to start the game (between 1 - 2)
   const turn = Math.ceil(Math.random() * 2)
 
   const game = new Game({ name, turn })

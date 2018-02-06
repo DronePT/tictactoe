@@ -11,6 +11,12 @@ const checkTie = (board = []) => board.every(s => s !== 0)
 
 const createSocketLogger = id => (...args) => logger(`#${id}:`, ...args)
 
+/**
+ * create left room handler
+ * @param {*} io socket.io server instance
+ * @param {*} socket socket.io client instance
+ * @param {*} user user token
+ */
 const createLeftRoom = (io, socket, user) => async (reason) => {
   const game = await Game.findOne({ name: user.room })
   if (!game) return
@@ -21,6 +27,12 @@ const createLeftRoom = (io, socket, user) => async (reason) => {
   io.to(user.room).emit('update-game', { players })
 }
 
+/**
+ * create join room handler
+ * @param {*} io socket.io server instance
+ * @param {*} socket socket.io client instance
+ * @param {*} user user token
+ */
 const createJoinRoom = (io, socket, user) => async (room) => {
   try {
     // add socket to room
@@ -44,12 +56,18 @@ const createJoinRoom = (io, socket, user) => async (room) => {
       winHistory,
     })
 
-    logger(`- ${user.name} (${socket.id}) joined #${room}\n - database: `, player)
+    logger(`- ${user.name} (${socket.id}) has joined #${room}`)
+    logger('- saving to database:', player)
   } catch (error) {
     logger(error.stack)
   }
 }
 
+/**
+ * authenticate websocket client
+ * @param {*} socket socket.io client instance
+ * @param {*} next send to next middleware
+ */
 const authenticate = (socket, next) => {
   try {
     const { token } = socket.handshake.query
@@ -63,6 +81,11 @@ const authenticate = (socket, next) => {
   }
 }
 
+/**
+ * create message broadcaster (for chat) helper
+ * @param {*} io socket.io server instance
+ * @param {*} user user info from token
+ */
 const createMessageBroadcaster = (io, user) => (text) => {
   if (!text || !text.length) return
   const { name, room } = user
@@ -74,11 +97,16 @@ const createMessageBroadcaster = (io, user) => (text) => {
     from: name,
     date,
   }
-  logger(message)
+  logger(`[MESSAGE] - ${name}: ${text} (${date})`)
 
   io.to(room).emit('message', message)
 }
 
+/**
+ * update and emit new game state
+ * @param {*} param0 object with socket server instance game model and user data
+ * @param {*} update object with new game state to update
+ */
 const updateGameAndEmit = ({ io, game, user }, update, gameEnded = false) => {
   const { players } = game
   io.to(user.room).emit('update-game', { ...update, players })
@@ -144,11 +172,15 @@ const createGameUpdater = (io, user) => async (position) => {
   )
 }
 
+/**
+ * new socket.io connection handler
+ * @param {*} io socket.io server instance
+ */
 const handleConnection = io => (socket) => {
   const { token } = socket.handshake.query
   const user = decodeToken(token)
 
-  logger('new connection:', user)
+  logger('[new connection]', user)
 
   createSocketLogger(user)
 
