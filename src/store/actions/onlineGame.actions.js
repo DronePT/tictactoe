@@ -40,6 +40,13 @@ export const connect = dispatch => async (name, room, _token = null) => {
   server.socket.on('join', player =>
     dispatchChat({ type: 'action', text: `${player.name} has joined.` }))
 
+  // handle players left the room event
+  server.socket.on('left', ({ player, players }) =>
+    dispatchChat({
+      type: 'action',
+      text: `${player.name} has left. (${players.length} players in the room)`,
+    }))
+
   // handle new messages to chat event
   server.socket.on('message', payload => dispatchChat(payload))
 

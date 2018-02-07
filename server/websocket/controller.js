@@ -23,8 +23,8 @@ const createLeftRoom = (io, socket, user) => async (reason) => {
 
   const players = await game.removePlayerBySocketId(socket.id)
 
-  io.to(user.room).emit('left', user)
   io.to(user.room).emit('update-game', { players })
+  io.to(user.room).emit('left', { player: user, players })
 }
 
 /**
