@@ -3,7 +3,7 @@ import shortid from 'shortid'
 import PropTypes from 'prop-types'
 
 // assets
-import './Game.css'
+import './style.css'
 
 // components
 import Slot from './components/Slot'

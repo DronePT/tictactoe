@@ -5,7 +5,8 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import './App.css'
 
 // containers/components
-import { StartMenu, GameBoard } from './../../containers'
+import StartMenu from './../StartMenu'
+import { GameBoard } from './../../components'
 import AppLogo from './components/AppLogo'
 
 const App = () => (

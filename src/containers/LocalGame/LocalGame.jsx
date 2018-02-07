@@ -6,12 +6,9 @@ import { connect } from 'react-redux'
 import './LocalGame.css'
 
 // components
-import { Header, CurrentTurn, Score, WinnerPopup } from './../../components'
-import Menu from './../StartMenu/components/menu'
-import MenuItem from './../StartMenu/components/menu/item'
-
-// containers
-import { Game } from './../../containers'
+import { Header, CurrentTurn, Score, WinnerPopup, Game } from './../../components'
+import Menu from './../../components/StartMenu/components/menu'
+import MenuItem from './../../components/StartMenu/components/menu/item'
 
 // redux actions
 import {

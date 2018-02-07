@@ -1,8 +1,8 @@
 import React from 'react'
-import './StartMenu.css'
+import './style.css'
 
 // components
-import { Header } from './../../components'
+import Header from './../../components/Header'
 import Menu from './components/menu'
 import MenuItem from './components/menu/item'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // assets
-import './GameBoard.css'
+import './style.css'
 
 // containers
 import { LocalGame, OnlineGame } from './../../containers'

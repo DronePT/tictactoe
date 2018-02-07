@@ -13,15 +13,12 @@ import {
   disconnect,
 } from './../../store/actions/onlineGame.actions'
 
-// containers
-import { Game } from './../../containers'
-
 // components
-import { Card as CardComponents, CurrentTurn, WinnerPopup, Button } from './../../components'
+import { CurrentTurn, WinnerPopup, Button, Game } from './../../components'
 import Chat from './components/Chat'
 import Score from './components/Score'
 
-const { Card, CardHeader, CardBody } = CardComponents
+import { Card, CardHeader, CardBody } from './../../components/Card'
 
 class Room extends Component {
   static propTypes = {

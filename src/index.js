@@ -16,7 +16,7 @@ import './index.css'
 import ticTacToeApp from './store'
 
 // components/containers
-import { App } from './containers'
+import App from './components/App/App'
 
 const store = createStore(ticTacToeApp)
 

@@ -9,11 +9,9 @@ import './CreateConnection.css'
 import { updateStateKey, connect as connectServer } from './../../store/actions/onlineGame.actions'
 
 // components
-import { Button, Form, Card as CardComponents } from './../../components'
+import { Button, Form } from './../../components'
 
-const {
-  Card, CardHeader, CardBody, CardFooter,
-} = CardComponents
+import { Card, CardHeader, CardBody, CardFooter } from './../../components/Card'
 
 class CreateConnection extends Component {
   static propTypes = {
