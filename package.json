@@ -10,14 +10,14 @@
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.1",
     "minireset.css": "0.0.3",
-    "mongoose": "^5.0.3",
-    "morgan": "^1.9.0",
+    "mongoose": "^5.5.14",
+    "morgan": "^1.9.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.0",
+    "react-scripts": "^3.0.1",
     "redux": "^3.7.2",
     "shortid": "^2.2.8",
     "socket.io": "^2.0.4",
@@ -35,7 +35,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.6.1",
-    "nodemon": "^1.14.12",
+    "nodemon": "^1.19.1",
     "prettier-eslint": "^8.8.1"
   }
 }
