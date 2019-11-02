@@ -10,7 +10,7 @@
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.1",
     "minireset.css": "0.0.3",
-    "mongoose": "^5.5.14",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
