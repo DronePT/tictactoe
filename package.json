@@ -7,7 +7,7 @@
     "cors": "^2.8.4",
     "dotenv": "^5.0.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.1.1",
     "minireset.css": "0.0.3",
     "mongoose": "^5.5.14",
